@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{margin: 0;
+        padding: 0;
+        box-sizing:border-box;
+        }
+        #pop-up {
+            width: 300px;
+            height: 300px;
+            background-color: antiquewhite;
+            position: fixed; 
+            /* fixed 는 무조건 브라우저 고정 */
+            top: 100px;
+            left: 100px;
+        }
+
+        #pop-up> button {
+            width: 100px;
+            height: 100px;
+        }
+
+        #root {
+            width: 100vw;
+            height: 300vh;
+            background-color: rgb(152, 150, 148);
+        }
+        #root > section {
+            width: 100%;
+            height: 100%;
+            border : 1px solid black
+        }
+
+        #root > section:nth-child(1){background-color: blueviolet;}
+        #root > section:nth-child(2){background-color: rgb(95, 68, 120);}
+        #root > section:nth-child(3){background-color: rgb(37, 5, 67);}
+
+    </style>
+</head>
+<body>
+    <aside id = "pop-up">
+        <button>close!</button>
+    </aside>
+    <div id="root">
+        <section></section>
+        <section></section>
+        <section></section>
+    </div>
+
+    <script>
+        const popUp = document.getElementById('pop-up');
+        console.dir(popUp);
+        const closeButton = popUp.children[0];
+        console.dir(closeButton);
+
+        const sections = document.getElementsByTagName('section');
+
+
+        closeButton.addEventListener('click',function(){
+            popUp.style.display ='none';
+            // 부모  parentElement
+        });
+
+        const root = document.getElementById('root');
+        const pTag = document.createElement('p');
+        pTag.textContent = "공욱재는 추남이다";
+        popUp.appendChild(pTag);
+
+        sections[2].addEventListener('click',function(){
+            popUp.style.display ='block';
+        });
+
+console.dir(sections);
+    </script>
+</body>
+</html>
