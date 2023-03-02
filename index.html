@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div id="root">
+        <ul id = menu>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+            <li>item-4</li>
+            <li>item-5</li>
+        </ul>
+    </div>
+<script>
+
+const menu = document.getElementById('menu');
+const firstLi = document.querySelector('#menu > li:nth-child(1)');
+console.log(firstLi);
+console.dir(menu.children);
+menu.children[0].style.color = "red";
+menu.children[1].style.color = "red";
+menu.children[2].style.color = "red";
+menu.children[3].style.color = "red";
+menu.children[4].style.color = "red";
+
+
+
+
+</script>
+</body>
+</html>
